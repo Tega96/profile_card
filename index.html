@@ -4,28 +4,154 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Card</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <main class="">
-        <section class="container" data-testid="test-profile-card">
+    <section class="profile-card" data-testid="test-profile-card">
+        <div class="card-inner">
             <!-- Avatar image -->
-            <figure class="avatar" >
-                <img src="./public/monkey.png" alt="image of Otega" class="avatar-img" data-testid="test-user-avatar" />
-                <figcaption>Image of Otega</figcaption>
-            </figure>
-            
-            <!-- User details -->
-            <div class="text-container">
-                <h1 class="name" data-testid="test-user-name">Otega Otite</h1>
-                <p class="bio" data-testid="test-user-bio">
-                    Otega is a Full Stack developer with 3 years of intensive practice of his craft. He has designed and built 23 products as at 2026: all deployed. 
-                </p>
-                <div class="">
-                    <time data-testid="test-user-time">19:00 in milliseconds</time>
-                </div>
-
+             <div class="avatar-section">
+                 <figure class="avatar-figure" ></figure>
+                 <img src="./public/monkey.png" alt="image of Otega" class="avatar-img " data-testid="test-user-avatar" />
+                 <figcaption>Image of Otega. Full Stack developer </figcaption>
+                </figure>
             </div>
-        </section>
-    </main>
+            
+
+            <!-- Main info section -->
+            <div class="info-section">
+                <header>
+                    <h2 class="name" data-testid="test-user-name" aria-label="User full name: Otega Otite">
+                        Otega Otite
+                    </h2>
+
+                    <!-- Bio paragraph -->
+                    <p class="bio" data-testid="test-user-bio">
+                        Otega is a Full Stack developer with 3 years of intensive practice of his craft. He has designed and built 23 products as at 2026: all deployed. 
+                    </p>
+
+                    <!-- EPOCH time with live region for dynamic updates -->
+                     <div class="time-container" aria-live="polite" aria-label="Current epoch time in milliseconds">
+                        <span class="time-label">UNIX Epoch (ms)</span>
+                        <span class="epoch-value" data-testid="test-user-time" id="liveEpochTime">--</span>
+                     </div>
+                </header>
+            </div>
+            <div class="sr-only" id="epochAnnouncer" aria-live="assertive"></div>
+
+
+            <!-- hobbies and dislikes -->
+            <div class="list-section">
+                <!-- Hobbies -->
+                <section aria-lavelledby="hobbies-heading">
+                    <div class="list-card">
+                        <div class="list-title" id="hobbies-heading">Hobbies</div>
+                        <ul class="list-items" data-testid="test-user-hobbies">
+                            <li>Playing basket ball</li>
+                            <li>Reaing</li>
+                            <li>Solving coding challenges</li>
+                            <li>Playing video games</li>
+                            <li >Sleeping</li>
+                        </ul>
+                    </div>
+                </section>
+    
+                <!-- dislikes-->
+                <section aria-labelledby="dislikes-heading">
+                    <div class="list-card">
+                        <div class="list-title" id="dislikes-heading"> Dislikes</div>
+
+                        <ul class="list-items" data-testid="test-user-dislikes">
+                            <li>Dirty environments</li>
+                            <li>Complacency</li>
+                            <li>Laziness</li>
+                            <li>Disrespect</li>
+                            <li>Going to the gym</li>
+                            <li>Partying</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Social links-->
+            <div class="social-wrapper">
+                <div class="social title"> Connect $ Social</div>
+            </div>
+
+            <nav aria-label="Social media links" data-testid="test-user-social-links">
+                <ul class="social-links-list" data-testid="test-user-social-links">
+                    <li>
+                        <a 
+                            href="https://facebook.com" 
+                            class="social-link" 
+                            rel="noopener noreferrer"
+                            data-testid="test-user-social-facebook"
+                            aria-label="Facebook profile: Otega Otite"
+                            target="_blank"
+                            width="24px"
+                            height="24"
+                        >
+                            <img src="./public/monkey.png" alt="facebook icon" class="social-icon-img"> Facebook
+                        </a>
+                    </li>
+                    <li>
+                        <a 
+                            href="https://x.com" 
+                            class="social-link" 
+                            rel="noopener noreferrer"
+                            data-testid="test-user-social-x"
+                            aria-label="X profile: Otega Otite"
+                            target="_blank"
+                            width="24px"
+                        >
+                            <img src="./public/monkey.png" alt="facebook icon" class="social-icon-img"> X
+                        </a>
+                    </li>
+                    <li>
+                        <a 
+                            href="https://linkedin.com" 
+                            class="social-link" 
+                            rel="noopener noreferrer"
+                            data-testid="test-user-social-linkedin"
+                            aria-label="Linkedin profile: Otega Otite"
+                            target="_blank"
+                            width="24px"
+                        >
+                            <img src="./public/monkey.png" alt="facebook icon" class="social-icon-img"> Linkedin
+                        </a>
+                    </li>
+                    <li>
+                        <a 
+                            href="https://instagram.com" 
+                            class="social-link" 
+                            rel="noopener noreferrer"
+                            data-testid="test-user-social-instagram"
+                            aria-label="Instagram profile: Otega Otite"
+                            target="_blank"
+                            width="24px"
+                        >
+                            <img src="./public/monkey.png" alt="facebook icon" class="social-icon-img"> Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a 
+                            href="https://github.com/Tega96" 
+                            class="social-link" 
+                            rel="noopener noreferrer"
+                            data-testid="test-user-social-github"
+                            aria-label="Github profile: Otega Otite"
+                            target="_blank"
+                            width="24px"
+                        >
+                            <img src="./public/monkey.png" alt="facebook icon" class="social-icon-img"> Github
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        
+            
+        </div>
+    </section>
+    <script src="./script.js"></script>
 </body>
 </html>
